@@ -2564,7 +2564,7 @@ p .wenhua-btn {
 	padding-bottom: 20px;
 }
 .recruitlist .row .name{
-	margin-left: 50px;
+	/* margin-left: 50px; */
 	font-weight: 600;
 	/* text-align: center; */
 	/* width: 100px; */
@@ -2581,7 +2581,7 @@ p .wenhua-btn {
 	margin: 10px auto;
 }
 .recruitlist .row .text{   
-	 margin-left: 50px;
+	 /* margin-left: 50px; */
 	 margin-bottom: 50px;
 }
 .recruitlist .row .text span{
@@ -2599,7 +2599,7 @@ p .wenhua-btn {
 	text-align: center;
 	color: #CF0F32;
 	margin: 40px auto;
-	width:720px;
+	/* width:720px; */
 	font-size: 16px;
 	padding: 0 20px;
 }

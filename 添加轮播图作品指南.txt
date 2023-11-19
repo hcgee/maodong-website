@@ -1,0 +1,10 @@
+1. 轮播图
+ (1) 添加
+    添加位置：将图片放在images/lunbo文件夹下
+    图片命名规则：后缀为jpg文件，命名为阿拉伯数字排序例如1.jpg 2.jpg
+    添加完成之后js/config.js文件中修改lunbo_show_length数量
+ (2) 删除
+    删除位置：将图片在images/lunbo文件夹下删除
+    
+    图片命名规则：后缀为jpg文件，命名为阿拉伯数字排序例如1.jpg 2.jpg
+    添加完成之后js/config.js文件中修改lunbo_show_length数量
