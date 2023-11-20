@@ -1270,7 +1270,7 @@ to {
 }
 .banner .owl-theme .item {
 	background-repeat: no-repeat!important;
-	background-size: auto 100%!important;
+	background-size: 80% 100%!important;
 	background-position: center top!important
 }
 .banner .owl-theme .item img {

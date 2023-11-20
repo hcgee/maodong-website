@@ -49,7 +49,8 @@
           <!-- <li class="tel visible-lg-inline-block"><a href="javascript:;"><span class="icon-page-lianxi"></span>
               15845831462</a></li> -->
         </ul>
-        <div class="lang"><a class="active" style="margin-right: 6px;">中</a>|<a style="margin-left: 6px;" href="en_about.html">EN</a></div>
+        <div class="lang"><a class="active" style="margin-right: 6px;">中</a>|<a style="margin-left: 6px;"
+            href="en_about.html">EN</a></div>
       </nav>
     </div>
   </header>
@@ -81,30 +82,10 @@
           </article>
         </div>
       </div>
-      <div class="row gongsi">
+      <div class="row gongsi" id="gongsi-container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wow animated fadeInUp">
           <figure class="text-center">
             <video height="300" style="object-fit: fill;width: 50%;" src="mp4/guanyugongsi/gonsi.MOV" controls alt="">
-          </figure>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0662.png" alt="">
-          </figure>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0654.png" alt="">
-          </figure>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0667.png" alt="">
-          </figure>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0672.png" alt="">
           </figure>
         </div>
       </div>
@@ -172,14 +153,32 @@
   <footer class="foot text-center">
     <div class="copy container">
       <p>
-        Copyright &copy; 2002-2018 上海猫动文化传媒有限公司 版权所有 <span class="hidden-xs"><a href="javascript:;"
-            target="_blank">备案号：鄂ICP备88888888号</a></span></p>
+        Copyright &copy; 2023-2038 上海猫动文化传媒有限公司 版权所有 <span class="hidden-xs"><a href="javascript:;"
+            target="_blank">备案号：沪ICP备2023032031号</a></span></p>
     </div>
   </footer>
   <script src="js/jquery.min.js"></script>
   <script src="js/wow.min.js"></script>
   <script src="js/sdcms.hits.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/config.js"></script>
+  <script>
+    // 加载公司图片相关
+    let gongsi_container = document.getElementById('gongsi-container')
+    let new_sort_arr = gongsiData.sort((a, b) => a.sort - b.sort);
+    for (let i = 0; i <= new_sort_arr.length; i++) {
+      if (new_sort_arr[i].is_show) {
+        let template = `<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp gongsi-item">
+          <figure>
+            <img class="gongsi-img" src="${new_sort_arr[i].img_url}" alt="">
+          </figure>
+        </div>`
+        let doc = new DOMParser().parseFromString(template, 'text/html')
+        let div = doc.querySelector('.gongsi-item')
+        gongsi_container.appendChild(div)
+      }
+    }
+  </script>
   <script>
     wow = new WOW(
       {

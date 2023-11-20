@@ -27,29 +27,26 @@
       <nav class="collapse navbar-right navbar-collapse" role="navigation">
         <ul class="list-inline navbar-nav">
           <li>
-            <a href="en_index.html">首页</a>
+            <a href="en_index.html">HOMEPAGE</a>
           </li>
           <li>
-            <a href="en_case.html">团队作品</a>
+            <a href="en_case.html">TEAMWORK</a>
           </li>
-
           <li class="hover">
-            <a href="en_about.html">关于猫动</a>
+            <a href="en_about.html">ABOUT US</a>
           </li>
           <li>
-            <a href="en_join.html">加入猫动</a>
+            <a href="en_join.html">JOIN US</a>
           </li>
           <li>
-            <a href="en_youshi.html">展望未来</a>
+            <a href="en_youshi.html">FUTURE</a>
           </li>
-
           <li>
-            <a href="en_contact.html">联系我们</a>
+            <a href="en_contact.html">CONTACT US</a>
           </li>
-          <!-- <li class="tel visible-lg-inline-block"><a href="javascript:;"><span class="icon-page-lianxi"></span>
-              15845831462</a></li> -->
         </ul>
-        <div class="lang"><a href="about.html" style="margin-right: 6px;">中</a>|<a class="active" style="margin-left: 6px;">EN</a></div>
+        <div class="lang"><a href="about.html" style="margin-right: 6px;">中</a>|<a class="active"
+            style="margin-left: 6px;">EN</a></div>
       </nav>
     </div>
   </header>
@@ -70,50 +67,36 @@
               Shanghai Catmove Culture Media Co., Ltd. is a creative film and television cultural media company。</p>
               <p>
                 &nbsp; &nbsp; &nbsp; &nbsp;
-                We are elites from well-known game companies and established film and television production companies, possessing rich and diverse industry experience and backgrounds。</p>
+                We are elites from well-known game companies and established film and television production companies,
+                possessing rich and diverse industry experience and backgrounds。</p>
               <p>
                 &nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp;The company's business involves multiple fields such as game promotional videos, animated short films, next-generation game animations, movies, TV special effects, and advertising program packaging。
+                &nbsp;&nbsp;The company's business involves multiple fields such as game promotional videos, animated
+                short films, next-generation game animations, movies, TV special effects, and advertising program
+                packaging。
               </p>
               <p>
                 &nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp;We has customized and created numerous CG promotional animation works and famous online game trailers for clients. Since its establishment。
+                &nbsp;&nbsp;We has customized and created numerous CG promotional animation works and famous online game
+                trailers for clients. Since its establishment。
               </p>
               <p>
                 &nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp;We has been committed to ensuring high-quality works and maintaining the professional standards in the animation and game CG production industry。
+                &nbsp;&nbsp;We has been committed to ensuring high-quality works and maintaining the professional
+                standards in the animation and game CG production industry。
               </p>
             </div>
             <br />
           </article>
         </div>
       </div>
-      <div class="row gongsi">
+      <div class="row gongsi" id="gongsi-container">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wow animated fadeInUp">
           <figure class="text-center">
             <video height="300" style="object-fit: fill;width: 50%;" src="mp4/guanyugongsi/gonsi.MOV" controls alt="">
           </figure>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0662.png" alt="">
-          </figure>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0654.png" alt="">
-          </figure>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0667.png" alt="">
-          </figure>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp">
-          <figure>
-            <img class="gongsi-img" src="images/gongsi/IMG_0672.png" alt="">
-          </figure>
-        </div>
+
       </div>
 
     </div>
@@ -179,14 +162,32 @@
   <footer class="foot text-center">
     <div class="copy container">
       <p>
-        Copyright &copy; 2002-2018 上海猫动文化传媒有限公司 版权所有 <span class="hidden-xs"><a href="javascript:;"
-            target="_blank">备案号：鄂ICP备88888888号</a></span></p>
+        Copyright &copy; 2023-2038 上海猫动文化传媒有限公司 版权所有 <span class="hidden-xs"><a href="javascript:;"
+            target="_blank">备案号：沪ICP备2023032031号</a></span></p>
     </div>
   </footer>
   <script src="js/jquery.min.js"></script>
   <script src="js/wow.min.js"></script>
   <script src="js/sdcms.hits.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/config.js"></script>
+  <script>
+    // 加载公司图片相关
+    let gongsi_container = document.getElementById('gongsi-container')
+    let new_sort_arr = gongsiData.sort((a, b) => a.sort - b.sort);
+    for (let i = 0; i <= new_sort_arr.length; i++) {
+      if (new_sort_arr[i].is_show) {
+        let template = `<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp gongsi-item">
+          <figure>
+            <img class="gongsi-img" src="${new_sort_arr[i].img_url}" alt="">
+          </figure>
+        </div>`
+        let doc = new DOMParser().parseFromString(template, 'text/html')
+        let div = doc.querySelector('.gongsi-item')
+        gongsi_container.appendChild(div)
+      }
+    }
+  </script>
   <script>
     wow = new WOW(
       {
