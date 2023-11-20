@@ -186,7 +186,7 @@
     let lunbo_container = document.getElementById('owl-banner')
     for (let i = 0; i <= lunboData.length; i++) {
       if (lunboData[i].is_show) {
-        let template = `<div class="item" style="background:url(${lunboData[i].img_url})"><a><img src="images/banner-height.gif" class="center-block" alt="幻灯3" /></a></div>`
+        let template = `<div class="item"><a><img src="${lunboData[i].img_url}" class="center-block" alt="幻灯3" /></a></div>`
         let doc = new DOMParser().parseFromString(template, 'text/html')
         let div = doc.querySelector('.item')
         lunbo_container.appendChild(div)
