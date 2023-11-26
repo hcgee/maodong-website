@@ -146,16 +146,9 @@ let friendData = [
     is_show: true, // 是否展示 true代表展示  false代表不展示
   },
   {
-    img_url: '../images/hezuohuoban/huoban6.png', // 合作伙伴图片路径
-    name: '网易', // 合作伙伴图片名字
-    sort: 6, // 排放顺序
-    en_name: '网易', // 合作伙伴图片英文名字
-    is_show: true, // 是否展示 true代表展示  false代表不展示
-  },
-  {
     img_url: '../images/hezuohuoban/huoban7.png', // 合作伙伴图片路径
     name: '红鲤', // 合作伙伴图片名字
-    sort: 7, // 排放顺序
+    sort: 6, // 排放顺序
     en_name: '红鲤', // 合作伙伴图片英文名字
     is_show: true, // 是否展示 true代表展示  false代表不展示
   },
