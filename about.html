@@ -64,30 +64,23 @@
   <section class="page sx-jianju">
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-lg-offset-1 col-md-offset-1">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
           <article class="content text-center">
             <div>
-              &nbsp; &nbsp; &nbsp; &nbsp;
-              上海猫动文化传媒有限公司是一家创意型影视文化传媒公司。</p>
               <p>
-                &nbsp; &nbsp; &nbsp; &nbsp;
-                公司核心团队均是来自知名游戏公司及老牌影视制作公司的精英，拥有丰富且多样化的行业经验及背景。</p>
-              <p>
-                &nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp;公司业务涉及游戏宣传片、动画短片、次时代游戏动 画、电影、电视特效、广告栏目包装等多个领域， 为 客户量身打造过多余部CG 宣传动画作品、知名网络游
-                戏预告片等。自成立以来公司一直致力于保证高质量 作品， 全力保持动漫游戏CG 制作业内的专业水准。
+                &nbsp; &nbsp; &nbsp; &nbsp;公司核心团队均是来自知名游戏公司及老牌影视制作公司的精英，拥有丰富且多样化的行业经验及背景，为客户量身打造过多余部CG宣传动画作品、知名网络游戏预告片等。
+                传统三维项目:哪吒之魔童降世电影，再世妖王电影，倩女幽魂CG，完美世界CG，天妖破动画番剧，4D电影将臣，猪八戒电影，大话西游CG，大圣归来，斗破苍穹动画番剧，星辰变动画番剧，赛尔号大电影，王者海月CG等。
+                三渲二项目:英雄联盟CG妮蔻，阴阳师，崩坏星河动画番剧，本草仙云CG，全职高手CG，王牌战土CG，一人之下CG,一人之下-异人集结CG,火影忍者手游招募动画CG,海贼王手游CG。
+                自成立以来公司一直致力于保证高质量作品，只为全力保持动漫游戏CG制作业内的专业水准。
               </p>
             </div>
             <br />
           </article>
         </div>
       </div>
+      <div class="row" style="margin-bottom: 64px;" id="member-container">
+      </div>
       <div class="row gongsi" id="gongsi-container">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wow animated fadeInUp">
-          <figure class="text-center">
-            <video height="300" style="object-fit: fill;width: 50%;" src="mp4/guanyugongsi/gonsi.MOV" controls alt="">
-          </figure>
-        </div>
       </div>
 
     </div>
@@ -100,13 +93,14 @@
           <div class="home-title wow animated fadeInUp">
             <h2 class="h-h2-white"> 关于猫动 </h2>
             <p class="m-sm-white"> About </p>
-            <p class="m-sm-white2"> 3年耕耘，上百成功作品，客户满意度100% </p>
+            <!-- <p class="m-sm-white2"> 3年耕耘，上百成功作品，客户满意度100% </p> -->
           </div>
           <p class="hg-4 wow animated fadeInUp">
-            公司自2020年6月成立以来服务于腾讯，网易，字节跳动等甲方，内容包括三渲二特效技术支持与制作，传统cg特效制作，获得客户的一致好评并建立了长期友好的合作关系。</p>
+            猫动文化，成立于2020年，我司是一家拥有丰富番剧动画、CG电影、游戏CG制作经验的动画公司，公司秉承着制作高品质、视觉特效为使命，一直以来，无论是在技术开发、视觉创作、制片流程，还是在视觉特效公司管理流程等方面不断努力和突破。
+          </p>
           <p class="hg-4 wow animated fadeInUp">
-            当前业务涉及游戏宣传片、动画短片、次时代游戏动画、电影、等多个领域。通过这些良性项目的带动，吸纳了一批行业内拥有丰富且多样化的行业经验及背景的尖端人才，也为公司的可持续发展提供了源源不断的动力</p>
-          <div class="row shuju">
+            信誉和品质是猫动坚守的核心，在过去的几年猫动文化的作品受到所有甲方的高度认可。</p>
+          <!-- <div class="row shuju">
             <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 wow animated fadeInUp">
               <figure>
                 <figcaption>
@@ -139,7 +133,7 @@
                 </figcaption>
               </figure>
             </div>
-          </div>
+          </div> -->
           <!-- <p>
 							<a href="javascript:;" class="btn-center">详细了解 →</a>
 							<a href="javascript:;" class="btn-center">荣誉资质 →</a>
@@ -176,6 +170,25 @@
         let doc = new DOMParser().parseFromString(template, 'text/html')
         let div = doc.querySelector('.gongsi-item')
         gongsi_container.appendChild(div)
+      }
+    }
+  </script>
+  <script>
+    // 加载公司成员相关
+    let member_container = document.getElementById('member-container')
+    for (let i = 0; i <= memberData.length; i++) {
+      if (memberData[i].is_show) {
+        let template = `<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 wow animated fadeInUp member-item">
+          <figure class="text-center">
+            <img src="${memberData[i].img_url}" alt="">
+            <p style="font-size:20px;font-weight:600;index-indext">${memberData[i].name}/${memberData[i].position}</p>
+            <p style="text-align:left;text-indent:2em;">${memberData[i].desc}</p>
+            <p style="text-align:left;">${memberData[i].zuopin}</p>
+          </figure>
+        </div>`
+        let doc = new DOMParser().parseFromString(template, 'text/html')
+        let div = doc.querySelector('.member-item')
+        member_container.appendChild(div)
       }
     }
   </script>
